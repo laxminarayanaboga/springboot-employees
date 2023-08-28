@@ -1,16 +1,15 @@
-package com.laxmi.employees.dao;
+package com.laxmi.employees.service;
 
 import com.laxmi.employees.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeDAO {
+public interface EmployeeService {
+    List<Employee> findAll();
 
     Employee save(Employee employee);
 
     Employee findById(int id);
 
     void deleteById(int id);
-
-    List<Employee> findAll();
 }
