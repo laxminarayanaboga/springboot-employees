@@ -1,6 +1,5 @@
 package com.laxmi.employees.rest;
 
-import com.laxmi.employees.dao.EmployeeDAO;
 import com.laxmi.employees.entity.Employee;
 import com.laxmi.employees.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +36,24 @@ public class EmployeeRestController {
         employee.setId(0);
         Employee newEmployee = employeeService.save(employee);
         return newEmployee;
+    }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee) {
+
+        Employee updatedEmployee = employeeService.save(employee);
+        return updatedEmployee;
+    }
+
+    @DeleteMapping("/employees/{employeeId}")
+    public String deleteEmployee(@PathVariable int employeeId) {
+
+        Employee employee = employeeService.findById(employeeId);
+        if (employee == null) {
+            throw new RuntimeException("Employeed id not found -- " + employeeId);
+        }
+        employeeService.deleteById(employeeId);
+        return "Deleted employee id - " + employeeId;
     }
 
 }

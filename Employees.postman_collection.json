@@ -73,7 +73,7 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:8080/api/employees/1",
+					"raw": "localhost:8080/api/employees/3",
 					"host": [
 						"localhost"
 					],
@@ -81,14 +81,14 @@
 					"path": [
 						"api",
 						"employees",
-						"1"
+						"3"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "POST employee",
+			"name": "POST employees",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -131,6 +131,96 @@
 					"path": [
 						"api",
 						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT employees",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 11,\n    \"firstName\": \"updatedTest\",\n    \"lastName\": \"test\",\n    \"email\": \"test@test.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employees/{employeeId}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/employees/8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"8"
 					]
 				}
 			},
