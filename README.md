@@ -10,7 +10,15 @@
 * Delete /employees
 
 ## Authorisation
-* admin / admin
+* admin / admin -- default
+* DB - noop
+* * john / test123
+* * mary / test123
+* * susan / test123
+* DB - bcrypt
+* * john / test123
+* * mary / test123
+* * susan / test123
 
 ## Architecture
 * MySQL DataBase
